@@ -1,20 +1,10 @@
-from flask import Flask, jsonify
+from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/", methods=['GET'])
 def home():
-    return jsonify({
-        "project": "COVID-19 Info API",
-        "author": "Muhammad Rizky - 22523215"
-    })
-
-@app.route('/info')
-def info():
-    return jsonify({
-        "symptoms": ["Fever", "Cough", "Fatigue", "Loss of taste/smell"],
-        "prevention": ["Wash hands", "Wear mask", "Social distancing"]
-    })
+    return "<h1>Hello from Muhammad Rizky, 22523215!</h1>"
 
 if __name__ == '__main__':
     app.run()
